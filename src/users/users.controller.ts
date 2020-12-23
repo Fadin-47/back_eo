@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Post, HttpException, HttpStatus, Query } from '@nestjs/common';
 import { UsersService } from './users.service';
 
-import { ResponseArroy } from '../common/global-interface/get-request.interface';
+import { ResponseArroy } from '../common/global-interface/response-arroy.interface';
 
 import { User } from './interface/user.interface';
 

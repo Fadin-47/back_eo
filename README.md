@@ -2,50 +2,30 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Реализация
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+HTTP-сервер реализован на фреймворке NestJS. Код написан на TypeScript.
 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
+## Для развертывания приложения
 
 ```bash
 $ npm install
 ```
 
-## Running the app
+## Запуск HTTP-сервера
 
 ```bash
-# development
+# для запуска приложения
 $ npm run start
 
-# watch mode
+# режим разработки (отслеживание изменений в *.ts файлах)
 $ npm run start:dev
 
-# production mode
+# production-режим
 $ npm run start:prod
 ```
 
-## Test
+## Тестирование приложения
 
 ```bash
 # unit tests
@@ -58,16 +38,60 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## Описание методов API
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### Получить список всех пользователей
+```bash
+# точка входа
+http://localhost:3001/users/getAllUsers
+# метод
+GET-запрос
+# входные данные
+отсутствуют
+# выходные данные
+{
+  message: 'Успено',
+  result: [массив данных],
+}
+```
 
-## Stay in touch
+### Поиск пользователя по имени
+```bash
+# точка входа
+http://localhost:3001/users/findUser
+# метод
+GET-запрос
+# входные данные
+name=фамилия или имя или отчество
+# выходные данные
+{
+  message: 'Найден пользователь',
+  result: [массив данных],
+}
+```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### Создать нового пользователя
+```bash
+# точка входа
+http://localhost:3001/users/createUser
+# метод
+POST-запрос
+# входные данные
+{
+  id: number;
+  username: string;
+  position: string;
+  email: string;
+  phoneInternal: number;
+  address: string;
+  office: string;
+}
+# выходные данные
+{
+  message: 'Успешно',
+  result: 'Создан новый пользователь'
+}
+```
 
-## License
-
-Nest is [MIT licensed](LICENSE).
+## Разработчики
+- [Антон Захаров](http://znode.ru)

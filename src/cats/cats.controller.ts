@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, HttpException, HttpStatus, Query, ParseIntPipe, } from '@nestjs/common';
 import { CatsService } from './cats.service';
 import { CreateCatDto } from './dto/create-cat.dto';
-import { ResponseArroy } from '../common/global-interface/get-request.interface';
+import { ResponseArroy } from '../common/global-interface/response-arroy.interface';
 import { Cat } from './interface/cats.interface';
 
 @Controller('cats')
