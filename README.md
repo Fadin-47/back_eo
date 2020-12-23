@@ -15,7 +15,6 @@ $ npm install
 ## Запуск HTTP-сервера
 
 ```bash
-# для запуска приложения
 $ npm run start
 ```
 
