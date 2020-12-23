@@ -17,25 +17,6 @@ $ npm install
 ```bash
 # для запуска приложения
 $ npm run start
-
-# режим разработки (отслеживание изменений в *.ts файлах)
-$ npm run start:dev
-
-# production-режим
-$ npm run start:prod
-```
-
-## Тестирование приложения
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
 ```
 
 ## Описание методов API
