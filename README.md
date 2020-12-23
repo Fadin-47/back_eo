@@ -44,10 +44,13 @@ $ npm run test:cov
 ```bash
 # точка входа
 http://localhost:3001/users/getAllUsers
+
 # метод
 GET-запрос
+
 # входные данные
 отсутствуют
+
 # выходные данные JSON-объект
 {
   message: 'Успено',
@@ -59,10 +62,13 @@ GET-запрос
 ```bash
 # точка входа
 http://localhost:3001/users/findUser
+
 # метод
 GET-запрос
+
 # входные данные
 name=фамилия или имя или отчество
+
 # выходные данные JSON-объект
 {
   message: 'Найден пользователь',
@@ -74,8 +80,10 @@ name=фамилия или имя или отчество
 ```bash
 # точка входа
 http://localhost:3001/users/createUser
+
 # метод
 POST-запрос
+
 # входные данные
 {
   id: number;
@@ -86,6 +94,7 @@ POST-запрос
   address: string;
   office: string;
 }
+
 # выходные данные JSON-объект
 {
   message: 'Успешно',
